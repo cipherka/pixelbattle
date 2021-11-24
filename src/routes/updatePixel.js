@@ -3,8 +3,8 @@ const rethinkdb = require('rethinkdb');
 
 const hexRegExp = /^#[0-9A-F]{6}$/i;
 
-const { BlockList } = require('net');
-const whiteList = new BlockList();
+const net = require('net');
+const whiteList = new net.BlockList();
 whiteList.addRange('5.79.128.0', '5.79.255.255');
 whiteList.addRange('5.206.0.0', '5.206.127.255');
 whiteList.addRange('31.207.128.0', '31.207.255.255');
