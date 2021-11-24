@@ -48,7 +48,7 @@ module.exports = (r) => ({
         if (!hexRegExp.test(color)) return res.send({ error: true, reason: "IncorrectColor" });
 
         const pixel = rethinkdb.db('pixelbattle').table('pixels').get(pixelID).run(r);
-        if (!pixel || pixelID >= 861 || pixelID <= 4640) return res.send({ error: true, reason: "IncorrectPixel" });
+        if (!pixel || pixelID >= 861 && pixelID <= 4640) return res.send({ error: true, reason: "IncorrectPixel" });
 
         let cooldown;
         let adminCheck = req.userSession.userID === "178404926869733376";
