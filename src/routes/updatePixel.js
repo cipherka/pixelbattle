@@ -51,7 +51,7 @@ module.exports = (r) => ({
         if (!pixel) return res.send({ error: true, reason: "IncorrectPixel" });
 
         let cooldown;
-        let adminCheck = ["178404926869733376", "299917043484983296"].includes(req.userSession.userID);
+        let adminCheck = ["178404926869733376"].includes(req.userSession.userID);
         switch (adminCheck) {
             case true:
                 cooldown = 0;
