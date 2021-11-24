@@ -1,3 +1,5 @@
+alert(`Эта версия сайта в разработке, если что.`);
+
 const AREA_WIDTH = 160;
 const AREA_HEIGHT = 80;
 const hostname = "https://pixels-api.boticord.top";
@@ -61,7 +63,7 @@ function updateTags() {
             let tags = document.getElementById('pixel-tags');
 
             let newTags = [];
-            for (const tag of data.tags) {
+            for (const tag of data.tags.sort((x, y) => y[1] - x[1])) {
                 newTags.push(`<li><b>${tag[0]}</b>: ${tag[1]}</li>`);
             }
 
