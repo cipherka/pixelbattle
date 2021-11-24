@@ -3,7 +3,7 @@ const rethinkdb = require('rethinkdb');
 
 const hexRegExp = /^#[0-9A-F]{6}$/i;
 
-const net = require('net');
+/* const net = require('net');
 const whiteList = new net.BlockList();
 whiteList.addRange('5.79.128.0', '5.79.255.255');
 whiteList.addRange('5.206.0.0', '5.206.127.255');
@@ -31,7 +31,7 @@ whiteList.addRange('176.226.128.0', '176.226.255.255');
 whiteList.addRange('185.12.228.0', '185.12.231.255');
 whiteList.addRange('193.33.26.0', '193.33.27.255');
 whiteList.addRange('193.105.156.0', '193.105.156.255');
-whiteList.addRange('195.114.122.0', '195.114.123.255');
+whiteList.addRange('195.114.122.0', '195.114.123.255'); */
 
 module.exports = (r) => ({
     method: "POST",
@@ -82,7 +82,7 @@ module.exports = (r) => ({
 
         let cooldown;
         let ip = req.headers['cf-connecting-ip'] || req.ip;
-        let adminCheck = whiteList.check(ip);
+        let adminCheck = false; // whiteList.check(ip);
         switch (adminCheck) {
             case true:
                 cooldown = 0;
