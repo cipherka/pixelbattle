@@ -31,7 +31,7 @@ module.exports = (r) => ({
                 all: used.length + unused.length,
                 used: used.length,
                 unused: unused.length
-            }, tags: Object.entries(tags).sort((x, y) => y - x).slice(0, 10)
+            }, tags: Object.entries(tags).sort((x, y) => y[1] - x[1]).slice(0, 10)
         });
     }
 });
